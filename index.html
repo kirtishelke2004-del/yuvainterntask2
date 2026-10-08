@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 - Interactive UI Components</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Interactive UI Components Showcase</h1>
+        <p>Built with Vanilla JavaScript, semantic HTML5, and accessible ARIA standards.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- 1. Interactive Tab System -->
+        <section class="component-card">
+            <h2>1. Accessible Tab Component</h2>
+            <div class="tabs-container">
+                <div class="tab-buttons" role="tablist" aria-label="Feature Tabs">
+                    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1">Overview</button>
+                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2">Specifications</button>
+                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3">Reviews</button>
+                </div>
+
+                <div class="tab-panels">
+                    <div class="tab-panel active" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+                        <h3>Overview Panel</h3>
+                        <p>This interactive tab component allows seamless content switching without page refreshes, maintaining clean UI structure.</p>
+                    </div>
+                    <div class="tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                        <h3>Technical Specifications</h3>
+                        <p>Built using Vanilla JS ES6 DOM manipulation, lightweight CSS transitions, and keyboard focus accessibility.</p>
+                    </div>
+                    <div class="tab-panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+                        <h3>User Reviews</h3>
+                        <p>⭐⭐⭐⭐⭐ "Smooth transitions and fully accessible via screen readers!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Accordion Component -->
+        <section class="component-card">
+            <h2>2. Interactive Accordion (FAQ)</h2>
+            <div class="accordion" id="accordionExample">
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="acc-body-1" id="acc-head-1">
+                        What is DOM Manipulation?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body" id="acc-body-1" role="region" aria-labelledby="acc-head-1" hidden>
+                        <p>DOM (Document Object Model) manipulation allows JavaScript to dynamically alter HTML elements, attributes, and CSS styles in response to user events.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="acc-body-2" id="acc-head-2">
+                        How does accessibility work here?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body" id="acc-body-2" role="region" aria-labelledby="acc-head-2" hidden>
+                        <p>By using ARIA roles (`aria-expanded`, `aria-controls`), screen readers can accurately interpret whether a collapsible section is currently visible or hidden.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. Modal Dialog Component -->
+        <section class="component-card">
+            <h2>3. Interactive Modal Dialog</h2>
+            <button id="openModalBtn" class="btn btn-primary">Open Interactive Modal</button>
+        </section>
+
+    </main>
+
+    <!-- Modal Element -->
+    <div id="customModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="modal-close" aria-label="Close modal">&times;</button>
+            <h3 id="modalTitle">Interactive Modal Window</h3>
+            <p>This modal supports overlay backdrop click to close, ESC key press detection, and focus containment for full keyboard accessibility.</p>
+            <button id="modalActionBtn" class="btn btn-secondary">Confirm Action</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Junior Frontend Developer Internship - Week 2 Submission.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
